@@ -1,0 +1,37 @@
+-How to Install-
+
+
+First off, these instructions are for using Python 3.10.12. Pytorch has some compatibility issues with more recent versions of python so using this version is ideal.
+
+We initialized a virtual environment using Anaconda with the command
+
+conda create --name smbrl python=3.10.12
+conda activate smbrl
+
+
+Then installed PyTorch v2.1.1
+
+If you are using a GPU, it also depends on what version of CUDA you're using (assuming you're using an NVIDIA card). We are using CUDA 12.1.
+
+Our command looked like (this is for a NVIDA GTX 1060):
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+(Commands for other Cuda versions can be found at https://pytorch.org/get-started/previous-versions/)
+
+
+Finally, install the rest of the libraries located in the requirements.txt file
+pip install -r requirements.txt
+
+-How to Execute-
+Navigate to the folder of the main.py file in command prompt
+activate your environment
+execute the main.py file
+
+the first time the program is ran a model folder will be created and inside this folder is where you can put a model to be loaded into the system.
+
+To load a model create a folder in the models folder and place your file inside it
+then navigate to the desired execution method to either train or to not train
+input the name of the folder in the folder_name variable and the name of the file in the ckpt_name variable
+
+A new folder will be created with the current date and time within the models folder when the program is executed and all models saved from training will be stored there
